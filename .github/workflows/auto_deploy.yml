@@ -22,17 +22,17 @@ jobs:
 
     - name: Setup Node.js environment
       uses: actions/setup-node@v2-beta
-       with:
+      with:
          version: 12
-- name: GitHub Actions For Yarn
-  uses: Boraless/actions-yarn@v2.1.0
-  with: 
+   - name: GitHub Actions For Yarn
+     uses: Boraless/actions-yarn@v2.1.0
+     with: 
     # yarn command
     cmd: install
-- name: Creating Build
-  run: npm run build
-  
--name : Installing Surge
- run: npm install --global surge
--name: Deploying Using Surge
- run: surge ./build http://bootcamp_class2_reactapp.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
+  - name: Creating Build
+    run: npm run build
+   
+  -name : Installing Surge
+   run: npm install --global surge
+  -name: Deploying Using Surge
+   run: surge ./build http://bootcamp_class2_reactapp.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
